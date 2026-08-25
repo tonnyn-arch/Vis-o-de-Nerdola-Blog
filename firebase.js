@@ -8,7 +8,7 @@ import { getAuth } from "firebase/auth";
 // front-end. A segurança de verdade vem das Regras do Firestore (veja o
 // arquivo firestore.rules) e do login por e-mail/senha.
 const firebaseConfig = {
-  apiKey: "COLE_AQUI_SUA_API_KEY",
+  apiKey: "AIzaSyC08ee8kIBLyEuREIfscIoQurU1gtUXjF8",
   authDomain: "SEU_PROJETO.firebaseapp.com",
   projectId: "SEU_PROJETO",
   storageBucket: "SEU_PROJETO.appspot.com",

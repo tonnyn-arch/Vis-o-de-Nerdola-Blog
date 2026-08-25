@@ -9,11 +9,11 @@ import { getAuth } from "firebase/auth";
 // arquivo firestore.rules) e do login por e-mail/senha.
 const firebaseConfig = {
   apiKey: "AIzaSyC08ee8kIBLyEuREIfscIoQurU1gtUXjF8",
-  authDomain: "SEU_PROJETO.firebaseapp.com",
-  projectId: "SEU_PROJETO",
-  storageBucket: "SEU_PROJETO.appspot.com",
-  messagingSenderId: "COLE_AQUI",
-  appId: "COLE_AQUI",
+  authDomain: "visao-de-nerdola-blog.firebaseapp.com",
+  projectId: "visao-de-nerdola-blog",
+  storageBucket: "visao-de-nerdola-blog.firebasestorage.app",
+  messagingSenderId: "916289368175",
+  appId: "1:916289368175:web:d7639be414c12cf8e2dd9a",
 };
 
 const app = initializeApp(firebaseConfig);

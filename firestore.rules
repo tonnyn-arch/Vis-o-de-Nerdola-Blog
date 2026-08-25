@@ -1,9 +1,0 @@
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /posts/{postId} {
-      allow read: if true;               // qualquer visitante pode ler o blog
-      allow write: if request.auth != null; // só quem estiver logado pode criar/editar/excluir
-    }
-  }
-}

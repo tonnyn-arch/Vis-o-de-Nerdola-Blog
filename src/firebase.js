@@ -1,12 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import { initializeFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
-// Cole aqui o bloco "firebaseConfig" que você copiou no Console do Firebase
-// (Configurações do projeto → Seus apps → ícone "</>").
-// Essas chaves NÃO são secretas — é normal e seguro deixá-las no código do
-// front-end. A segurança de verdade vem das Regras do Firestore (veja o
-// arquivo firestore.rules) e do login por e-mail/senha.
 const firebaseConfig = {
   apiKey: "AIzaSyC08ee8kIBLyEuREIfscIoQurU1gtUXjF8",
   authDomain: "visao-de-nerdola-blog.firebaseapp.com",
@@ -17,5 +12,13 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
+
+// Força o modo de conexão "long polling" em vez de deixar o Firestore
+// detectar sozinho. Isso evita conexões que ficam penduradas pra sempre
+// (sem erro nenhum) em certas redes/provedores que bloqueiam o modo de
+// streaming padrão.
+export const db = initializeFirestore(app, {
+  experimentalForceLongPolling: true,
+});
+
 export const auth = getAuth(app);
